@@ -10,6 +10,28 @@ Install [Docker Desktop](https://www.docker.com/products/docker-desktop/)
 - Unfold `POST /api/hello-ifc/` and click `Try it out`
 - Upload an IFC and execute the method
 
+## Run prebuilt image
+If you just wish to use this image for your own implementation, simply get the built image from dockerhub and use the following `docker-compose.yml`:
+```yml
+version: '2.4'
+services:
+
+  ifc_apis:
+    container_name: ifc_apis
+    image: mhra/ifc-api:latest
+    ports:
+        - "5000:5000"
+    networks:
+        - "ifc_apis"
+    volumes:
+      - ./apis:/app/apis/
+
+networks:
+  ifc_apis:
+```
+
+All work is done in the apis folder, and you can start from the example in this repo and build from there. The important part is that you map your local folder to `/app/apis` in the container and that the folder contains a `main.py` file.
+
 ## Extend
 The `apis` folder contains all the code. `main.py` specifies endpoints that call methods in the `methods`-folder and the `helpers`-folder contains generic helper functions that can be used anywhere.
 
