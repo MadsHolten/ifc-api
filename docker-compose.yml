@@ -1,0 +1,16 @@
+version: '2.4'
+services:
+
+  ifc_apis:
+    container_name: ifc_apis
+    build:
+      context: ./
+    ports:
+        - "5000:5000"
+    networks:
+        - "ifc_apis"
+    volumes:
+      - ./apis:/app/apis/
+
+networks:
+  ifc_apis:
