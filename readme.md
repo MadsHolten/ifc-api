@@ -6,7 +6,7 @@ This final image is on Dockerhub and can be installed from there.
 ## Use
 Install [Docker Desktop](https://www.docker.com/products/docker-desktop/)
 - Run command `docker-compose up` from this folder
-- Visit `http://localhost:5000/docs` in your browser
+- Visit http://localhost:5000/docs in your browser
 - Unfold `POST /api/hello-ifc/` and click `Try it out`
 - Upload an IFC and execute the method
 
